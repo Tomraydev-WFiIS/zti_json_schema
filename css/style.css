@@ -1,0 +1,35 @@
+body {
+    /* margin:0; */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+.nav > ul {
+    list-style-type: none;
+}
+.nav > ul > li {
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+    text-align: center;
+}
+
+textarea {
+    height: 24em;
+    width: 80%;
+    resize: none;
+}
+
+#controls {
+    text-align: center;
+}
+
+.btn {
+    padding: 4px 8px;
+}
