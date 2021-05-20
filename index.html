@@ -1,44 +1,57 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ZTI-ref</title>
 
-  <title>JSON schema validator</title>
-  <meta name="description" content="JSON schema validator">
-  <meta name="author" content="Tomasz Rajchel, Krzysztof Oziomek">
-  <link rel="icon" type="image/png" href="favicon.ico"/>
-  <link rel="stylesheet" href="css/style.css">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" rel="stylesheet">
+
+    <script crossorigin="anonymous"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script crossorigin="anonymous" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 
 </head>
-
 <body>
-    <div class="nav">
-      <ul>
-        <li>Przykłady</li>
-        <li>Reset</li>
-      </ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>JSON Schema</h1>
+        </div>
     </div>
     <div class="row">
-        <div class="column">
-          <textarea id="schema_text" name="schema_text" spellcheck="false" >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, deleniti! A, earum maiores? Nihil ad vel praesentium veniam distinctio ea necessitatibus, laborum debitis, consequatur voluptatem ipsum, quaerat ullam magnam architecto.
-          </textarea>
+        <div class="col">
+            <label for="taSchema">Schema</label>
+            <textarea oninput="testSchema()" class="form-control" id="taSchema" rows="10">{
+ "type": "object",
+ "properties": {
+  "foo": {"type": "string"},
+  "bar": {"type": "number", "maximum": 3}
+ },
+ "required": ["foo", "bar"],
+ "additionalProperties": false
+}</textarea>
         </div>
-        
-        <div class="column">
-          <textarea id="data_text" name="data_text" spellcheck="false" >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, deleniti! A, earum maiores? Nihil ad vel praesentium veniam distinctio ea necessitatibus, laborum debitis, consequatur voluptatem ipsum, quaerat ullam magnam architecto.
-          </textarea>
+        <div class="col">
+            <label for="taData">Dane</label>
+            <textarea oninput="testSchema()" class="form-control" id="taData" rows="10">{
+ "foo": "abc",
+ "bar": 2
+}</textarea>
         </div>
     </div>
-    <div id="controls">
-      <button class="btn">Validate</button>
+    <div class="row">
+        <div class="col"><p id="out"></p></div>
     </div>
+</div>
 
 
+<script src="./bundle.js"></script>
 
-
-  <script src="js/script.js"></script>
 </body>
 </html>
