@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>ZTI-ref</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="description" content="JSON schema validator">
+  <meta name="author" content="Tomasz Rajchel, Krzysztof Oziomek">
+  <title>JSON schema validator</title>
 
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.ico"/>
+  <link
+    crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
-    <script crossorigin="anonymous"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script
+    crossorigin="anonymous"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js">
+  </script>
 
-    <script crossorigin="anonymous" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script crossorigin="anonymous"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">
+  </script>
 
 </head>
 <body>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>JSON Schema</h1>
-        </div>
+  <div class="row">
+    <div class="col">
+      <h1>JSON Schema</h1>
+      <select class="form-select" id="example-select">
+        <option value="01" selected>Domyślne</option>
+        <option value="02">Zadanie 1</option>
+        <option value="03">Zadanie 2</option>
+        <option value="04">Przykład 1.1</option>
+        <option value="05">Przykład 1.2</option>
+        <option value="06">Przykład 1.3</option>
+        <option value="07">Przykład 1.4</option>
+        <option value="08">Przykład 1.5</option>
+        <option value="09">Przykład 1.6</option>
+        <option value="10">Przykład 2</option>
+      </select>
     </div>
-    <div class="row">
-        <div class="col">
-            <label for="taSchema">Schema</label>
-            <textarea oninput="testSchema()" class="form-control" id="taSchema" rows="20">{
- "type": "object",
- "properties": {
-  "foo": {"type": "string"},
-  "bar": {"type": "number", "maximum": 3}
- },
- "required": ["foo", "bar"],
- "additionalProperties": false
-}</textarea>
-        </div>
-        <div class="col">
-            <label for="taData">Dane</label>
-            <textarea oninput="testSchema()" class="form-control" id="taData" rows="20">{
- "foo": "abc",
- "bar": 2
-}</textarea>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="taSchema">Schema</label>
+      <textarea oninput="testSchema()" class="form-control" id="taSchema" rows="20" spellcheck="false">{}</textarea>
     </div>
-    <div class="row">
-        <div class="col"><p id="out"></p></div>
+    <div class="col">
+      <label for="taData">Dane</label>
+      <textarea oninput="testSchema()" class="form-control" id="taData" rows="20" spellcheck="false">{}</textarea>
     </div>
+  </div>
+  <div class="row">
+    <div class="col"><p id="out"></p></div>
+  </div>
 </div>
 
-
-<script src="./bundle.js"></script>
-
+<script src="./js/bundle.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

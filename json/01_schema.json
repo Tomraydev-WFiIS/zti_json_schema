@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "foo": {"type": "string"},
+    "bar": {"type": "number", "maximum": 3}
+  },
+  "required": ["foo", "bar"],
+  "additionalProperties": false
+}

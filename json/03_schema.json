@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "fruits": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "vegetables": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/veggie" },
+      "minItems": 2,
+      "maxItems": 3
+    }
+  },
+  "required": ["fruits", "vegetables"],
+  "additionalProperties": false,
+  "$defs": {
+    "veggie": {
+      "type": "object",
+      "required": [ "veggieName", "veggieLike" ],
+      "properties": {
+        "veggieName": {
+          "type": "string",
+          "description": "The name of the vegetable."
+        },
+        "veggieLike": {
+          "type": "boolean",
+          "description": "Do I like this vegetable?"
+        }
+      }
+    }
+  }
+}

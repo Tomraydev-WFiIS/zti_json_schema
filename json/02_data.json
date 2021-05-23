@@ -1,0 +1,15 @@
+{
+  "id": 21706093,
+  "accuracy": 56.1,
+  "altitude": 238.09999084472656,
+  "location_provider": "network",
+  "timestamp": 1621516538555,
+  "data_source": "api_v2",
+  "visible": true,
+  "device_id": 7294,
+  "user_id": 7294,
+  "location": {
+    "lat": 50.0335,
+    "lon": 20.0512
+  }
+}
