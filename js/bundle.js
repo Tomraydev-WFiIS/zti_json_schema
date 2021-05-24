@@ -8,31 +8,35 @@ global.testSchema = function() {
         var schema = JSON.parse($("#taSchema").val())
     } catch (error) {
         console.error(error);
-        $("#out").text("Błąd w składni schemy: " + error)
+        $("#out").text("Błąd w składni schemy: " + error);
+        $("#out").css("background-color", "rgba(255,0,0,0.5");
         return
     }
     try {
         var data = JSON.parse($("#taData").val())
     } catch (error) {
         console.error(error);
-        $("#out").text("Błąd w składni danych: " + error)
+        $("#out").text("Błąd w składni danych: " + error);
+        $("#out").css("background-color", "rgba(255,0,0,0.5");
         return
     }
-
 
     try {
         var valid = ajv.validate(schema, data)
     } catch (error) {
         console.error(error);
-        $("#out").text("Błąd schemy: " + error)
+        $("#out").text("Błąd schemy: " + error);
+        $("#out").css("background-color", "rgba(255,0,0,0.5");
         return
     }
     
     if (valid) {
-        $("#out").text("Dane prawidłowe")
+        $("#out").text("Dane prawidłowe");
+        $("#out").css("background-color", "rgba(0,255,0,0.5");
     }
     else {
-        $("#out").text("Dane nieprawidłowe: " + ajv.errorsText(valid.errors))
+        $("#out").text("Dane nieprawidłowe: " + ajv.errorsText(valid.errors));
+        $("#out").css("background-color", "rgba(255,0,0,0.5");
     }
 }
 global.testSchema()

@@ -1,11 +1,10 @@
-function init_textarea() {
-    $("#taSchema").load("./json/01_schema.json");
-    $("#taData").load("./json/01_data.json");
-}
-
 function load_example(example) {
-    $("#taSchema").load(`./json/${example}_schema.json`);
-    $("#taData").load(`./json/${example}_data.json`);
+    $.get( `./json/${example}_data.json`, function( data ) {
+        $("#taData").val(data);
+    }, "text");
+    $.get( `./json/${example}_schema.json`, function( data ) {
+        $("#taSchema").val(data);
+    }, "text");
 }
 
 document.getElementById("example-select").addEventListener("change", function() {
@@ -16,7 +15,7 @@ document.getElementById("example-select").addEventListener("change", function() 
 
 
 function main() {
-    init_textarea();
+    load_example("01");
 }
 
 window.onload = main();

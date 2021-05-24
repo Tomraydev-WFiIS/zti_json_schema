@@ -1,3 +1,6 @@
 {
-  
+  "warehouseLocation": {
+    "latitude": -78.75,
+    "longitude": 20.4
+  }
 }
