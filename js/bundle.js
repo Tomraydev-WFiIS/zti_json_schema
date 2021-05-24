@@ -29,7 +29,7 @@ global.testSchema = function() {
         $("#out").css("background-color", "rgba(255,0,0,0.5");
         return
     }
-    
+
     if (valid) {
         $("#out").text("Dane prawidłowe");
         $("#out").css("background-color", "rgba(0,255,0,0.5");
@@ -39,7 +39,6 @@ global.testSchema = function() {
         $("#out").css("background-color", "rgba(255,0,0,0.5");
     }
 }
-global.testSchema()
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"ajv":2}],2:[function(require,module,exports){
 "use strict";

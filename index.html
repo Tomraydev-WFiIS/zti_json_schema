@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta name="description" content="JSON schema validator">
+  <meta name="description" content="Interaktywny walidator JSON Schema">
   <meta name="author" content="Tomasz Rajchel, Krzysztof Oziomek">
   <title>JSON schema validator</title>
 
@@ -26,13 +26,15 @@
     src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>JSON Schema</h1>
+      <h1>Interaktywny walidator JSON Schema</h1>
       <select class="form-select" id="example-select">
         <option value="01" selected>Domyślne</option>
         <option value="02">Zadanie 1</option>
@@ -50,11 +52,11 @@
   <div class="row">
     <div class="col">
       <label for="taSchema">Schema</label>
-      <textarea oninput="testSchema()" class="form-control" id="taSchema" rows="20" spellcheck="false">{}</textarea>
+      <textarea oninput="tsdeb()" class="form-control" id="taSchema" rows="20" spellcheck="false">{}</textarea>
     </div>
     <div class="col">
       <label for="taData">Dane</label>
-      <textarea oninput="testSchema()" class="form-control" id="taData" rows="20" spellcheck="false">{}</textarea>
+      <textarea oninput="tsdeb()" class="form-control" id="taData" rows="20" spellcheck="false">{}</textarea>
     </div>
   </div>
   <div class="row">
