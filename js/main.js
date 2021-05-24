@@ -1,4 +1,4 @@
-var tsdeb = _.debounce(testSchema, 250);
+var tsdeb = _.debounce(testSchema, 50);
 
 function load_example(example) {
     $.get( `./json/${example}_data.json`, function( data ) {
